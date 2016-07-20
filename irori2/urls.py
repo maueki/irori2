@@ -17,11 +17,11 @@ from django.conf.urls import url
 from django.conf.urls import include
 from django.contrib import admin
 from django.views.generic import RedirectView
-from sample import views as sampleviews
+from sample.urls import router
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(url='sample/')),
-    url(r'^sample/', sampleviews.home),
+    url(r'^$', RedirectView.as_view(url='api/')),
+    url(r'^api/', include(router.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
 ]
