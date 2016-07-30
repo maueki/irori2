@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^favicon\.ico$', RedirectView.as_view(url='/static/ico/favicon.ico')),
 ]
